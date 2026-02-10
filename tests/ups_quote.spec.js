@@ -73,9 +73,10 @@ test('Automate UPS Freight Forwarding Quote', async ({ page }) => {
     await val.fill('10000000');
 
     // select currency
-    const curr = page.locator('div[role="combobox"]').filter({ hasText: 'USD' }).first();
-    await comm.waitFor({ state: 'visible' });
-    await comm.click();
+    const curr = page.locator('span#currency[role="combobox"]');    
+    await curr.waitFor({ state: 'visible', timeout: 30000 });
+    await curr.scrollIntoViewIfNeeded();
+    await curr.click();
     await page.getByText('INR', { exact: true }).click();
     
 
