@@ -143,6 +143,4 @@ test('Automate UPS Freight Forwarding Quote', async ({ page }) => {
     await submitBtn.scrollIntoViewIfNeeded();
     await submitBtn.click();
 
-    // Optional: Wait to see result
-    await page.waitForTimeout(30000);
 });
